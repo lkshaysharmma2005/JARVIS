@@ -1,13 +1,13 @@
 from dotenv import load_dotenv
-load_dotenv()
-
 import speech_recognition as sr
 import webbrowser
 import pyttsx3
 from googleapiclient.discovery import build
 import threading 
+import os
 
-API_KEY = "AIzaSyAvOTeIfC5Y4N7CMwi9Z6-V4m0FHNhEOck"
+load_dotenv()
+API_KEY = os.getenv("YOUTUBE_API_KEY")
 
 def speak(text, block=True):
     print(text)
